@@ -1,5 +1,4 @@
 import { ToDo } from "./todo-model";
-import { idGenerator } from "./id-generator";
 
 interface CreateToDo {
   name: string;
@@ -104,6 +103,8 @@ export class TodoService {
 
     this.toDos[index] = toDo;
   }
+
+  /* Bug pego por teste: precisa alterar a instancia do this não a referencia */
 
   public toggleAllToDos(): void {
     this.toDos.forEach((toDo, index) => {
